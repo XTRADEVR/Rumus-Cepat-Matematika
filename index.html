@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Rumus Cepat - Matematika & Fisika Dasar</title>
+  <meta name="description" content="Aplikasi PWA Pelajaran dan Kalkulator Rumus Matematika dan Fisika Dasar Bahasa Indonesia" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header class="header-banner">
+    <div class="header-title">⚡ Rumus Cepat</div>
+    <div class="header-subtitle">Kalkulator & Pelajaran Matematika / Fisika Dasar</div>
+  </header>
+
+  <!-- Main Catalog View -->
+  <main id="main-container" class="container">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" class="search-input" placeholder="Cari rumus (contoh: Pythagoras, Newton, Luas)..." />
+    </div>
+
+    <div id="category-scroll" class="category-scroll"></div>
+    <div id="formula-grid" class="formula-grid"></div>
+  </main>
+
+  <!-- Quiz View -->
+  <div id="quiz-view" style="display: none;"></div>
+
+  <!-- Favorites & History View -->
+  <div id="fav-view" style="display: none;"></div>
+
+  <!-- Detail Screen -->
+  <div id="detail-view" class="detail-view">
+    <div class="detail-header">
+      <button class="back-btn" onclick="closeDetail()">←</button>
+      <div>
+        <div id="detail-title" style="font-weight: 700; font-size: 1.1rem;">Nama Rumus</div>
+        <div id="detail-category" style="font-size: 0.8rem; color: var(--text-secondary);">Kategori</div>
+      </div>
+    </div>
+
+    <div class="tab-row">
+      <button id="tab-kalkulator" class="tab-btn active" onclick="switchTab('kalkulator')">Kalkulator</button>
+      <button id="tab-materi" class="tab-btn" onclick="switchTab('materi')">Materi & Soal</button>
+    </div>
+
+    <div id="detail-content"></div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button id="nav-katalog" class="nav-item active" onclick="showPage('katalog')">
+      <span>📖</span>
+      <span>Katalog</span>
+    </button>
+    <button id="nav-kuis" class="nav-item" onclick="showPage('kuis')">
+      <span>🎯</span>
+      <span>Kuis</span>
+    </button>
+    <button id="nav-favorit" class="nav-item" onclick="showPage('favorit')">
+      <span>⭐</span>
+      <span>Favorit</span>
+    </button>
+  </nav>
+
+  <script src="./rumus.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
